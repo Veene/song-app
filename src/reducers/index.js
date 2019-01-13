@@ -9,11 +9,11 @@ export const songs = () => {
   ]
 }
 
-export const selectedSong = (song = null, action) => {
+export const selectedSong = (state = null, action) => {
   if(action.type === 'SONG_SELECTED') {
     return action.payload
   }
-  return song
+  return state
 }
 
 export default combineReducers({
