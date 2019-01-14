@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-class SongDetail extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>SongDetail</h2>
-        <div>{this.props.song ? this.props.song.title : null}</div>
-        <div>{this.props.song ? this.props.song.duration : null}</div>
-      </div>
-    )
+const SongDetail = (props) => {
+  if(!props.song) {
+    return <div>Select a song</div>
   }
+  return (
+    <div>
+      <h2>Song Detail</h2>
+      <div>Title: {props.song.title}</div>
+      <div>Duration: {props.song.duration}</div>
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {
